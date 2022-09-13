@@ -1,0 +1,16 @@
+.p-tab{
+    &List{
+        display: flex;
+        width: 100%;
+        justify-content:space-between;
+    }
+    &ContentDisplay{
+        display: none;
+        opacity: 0;
+        width: 100%;
+        &.active{
+            display: block;
+            opacity: 1;
+        }
+    }
+}

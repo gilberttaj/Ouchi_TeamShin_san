@@ -1,0 +1,140 @@
+@use 'sass:math';
+@import '../core/mixins/*';
+@import '../core/root/_variables';
+
+
+.page__center{
+    .appointmentUpdates{
+        &__inner{
+            display: flex;
+            border-radius: 50px 50px 0 0;
+            background: #fff;
+            box-shadow: 2px 2px 10px rgba(0 , 0, 0, 0.5);
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            @include is-laptop{
+                width: 100%;
+                height:600px;
+            }
+            @include is-responsive{
+                flex-flow: column;
+                width: 100%;
+            }
+            .left, .right{
+                @include is-laptop{
+                    width: 100%;
+                }
+            }
+            .left{
+                @include is-laptop{
+                    margin-right:20px;
+                }
+            }
+            .right{
+                @include is-responsive{
+                    margin-top: 20px;
+                }
+            }
+            .title{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid $color-accent;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
+            .title_color{
+                color: $color-accent;
+            }
+            .content{
+                margin-top:20px;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                th:first-child{
+                    padding-left: 15px;
+                }    
+                th{
+                    text-align: left;
+                }
+                td,tr:not(:first-child){
+                    border-bottom: 1px solid $color-table-border;
+                }
+                tr:first-child{
+                    background-color: $color-table-head;
+                }
+
+                tr td:first-child{
+                    width: 5%;
+                    // background-color: yellow;
+                }
+
+                td:has(input) {
+                    text-align: center;
+                    width: 50px;
+                }
+
+                td, th {
+                    white-space: nowrap;
+                    padding: 10px;
+                }
+
+                tr:nth-child(4), tr:last-child {
+                    background-color: $color-table-tr-2;
+                }
+            }   
+
+            .arrow::before{
+                position: relative;
+                content: "";
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-right: 2.5px solid $color-accent;
+                border-top: 2.5px solid $color-accent;
+                transform: rotate(45deg);
+                margin-right: 0.5em;
+                margin-left: 0.5em;
+                        }
+        }
+
+        .receptionTime{
+            display: flex;
+            // align-items: center;
+            .textFrame{
+                border: 1px solid #000;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                p{
+                    align-items: center;
+                    display: flex;
+                    text-align: center;
+                }
+            }
+            .left{
+                width: 15%;
+                margin-right: 20px;
+            }  
+            .right{
+                align-self: center;
+
+                .divider{
+                    border-bottom: 1px solid $color-table-border;
+                }
+            } 
+            .textContainer{
+                font-size: 14px;
+                margin: 15px 0;
+            }
+        }
+
+    }
+
+    .right.updates{
+        .p-tabLink{
+            width: 20%;
+        }
+    }
+}
